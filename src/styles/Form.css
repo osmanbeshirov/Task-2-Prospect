@@ -1,0 +1,132 @@
+.form-parent {
+    height: 20rem;
+    width: 30rem;
+    margin: auto;
+    margin-top: -12rem;
+}
+
+.form-parent__heading {
+    font-size: 3rem;
+    line-height: 60px;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+
+.main-form {
+    width: 100%;
+    border: none;
+    position: relative;
+}
+
+.current--form {
+    margin-top: 2rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+.main-form__todo-input {
+    border-radius: 10px;
+    width: 100%;
+    height: 4rem;
+    border: none;
+    padding: 1.5rem 1.5rem 1.5rem 4.1rem;
+}
+
+.list-item {
+    width: 100%;
+    border-bottom: 1px solid #efefef;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem 0 1.3rem;
+}
+
+.list-item__inputs {
+    display: flex;
+    align-items: center;
+}
+
+.list-item:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.main-form__current-input {
+    width: 80%;
+    height: 4rem;
+    font-size: 1rem;
+    line-height: 19px;
+    color: #414141;
+    padding: 1.5rem;
+    border: none;
+}
+
+.current-todo__checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid #00D1FF;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.current-todo__checkbox:checked {
+    appearance: auto;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.add-todo {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: #00A3FF;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.status {
+    width: 100%;
+    height: 1.6rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.3rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 0.7rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status__detailer {
+    display: flex;
+}
+
+.status__detailer p {
+    margin-right: 1.4rem;
+    color: #858585;
+}
+
+.status__btn {
+    border: none;
+    color: #858585;
+    background-color: #fff;
+    font-size: 0.7rem;
+}
+
+.status__btn:hover {
+    cursor: pointer;
+}

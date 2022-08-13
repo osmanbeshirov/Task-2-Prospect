@@ -12,12 +12,12 @@
    width: 100%;
    height: 100vh;
    margin: auto;
-   background-color: #e5e5e5
+   background-color: #e5e5e5;
  }
 
  .header-bg {
    background: linear-gradient(269.38deg, rgba(172, 0, 253, 0.58) 20.07%, rgba(0, 248, 233, 0.58) 82.18%);
    background-image: url('../photos/Background.png');
    background-size: cover;
-   height: 15rem;
+   height: 17rem;
  }

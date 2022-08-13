@@ -1,10 +1,9 @@
-import Form from './Form';
-import List from './List';
+import List from './Components/List';
 import './styles/App.css';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <div className='container'>
         <div className='header-bg'></div>
         <List />

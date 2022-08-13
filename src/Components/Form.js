@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import './styles/Form.css'
-
+import '../styles/Form.css'
 
 export default function Form(props) {
 
   const [input, setInput] = useState('')
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
     props.onSubmit({
+      id: props.id,
       text: input
     })
     setInput('')

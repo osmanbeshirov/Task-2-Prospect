@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-import './styles/Form.css'
+import '../styles/Form.css'
+import bin from '../photos/Vector.png'
 
-import bin from './photos/Vector.png'
-
-export default function Todo({ todos, handleRemoveAllTodos }) {
+export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo }) {
 
     const showStatus = () => {
 
@@ -23,7 +22,7 @@ export default function Todo({ todos, handleRemoveAllTodos }) {
     return (
         <div>
             <div className='form-parent'>
-                <form className='main-form current--form'>
+                <form className='current--form'>
                     <ul>
                         {todos.map((todo, index) => (
                             <li className='list-item' key={index}>
@@ -37,7 +36,7 @@ export default function Todo({ todos, handleRemoveAllTodos }) {
                                     />
                                 </div>
 
-                                <img src={bin} />
+                                <img onClick={() => removeCurrentTodo(todo)} className='remove-todo' src={bin} alt={bin} />
                             </li>
                         ))}
 

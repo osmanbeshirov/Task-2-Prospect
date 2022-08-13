@@ -178,3 +178,33 @@ input:focus {
     background-color: red !important;
     color: #fff;
 }
+
+
+.parent--modifaer {
+    background-color: #fff;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.parent--modifaer img {
+    margin-bottom: 10px;
+}
+
+.parent--modifaer h2 {
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 22px;
+    color: #858585;
+    margin-top: 30px;
+}
+
+.modifiaer {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

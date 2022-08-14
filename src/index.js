@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './App'
 import 'alertifyjs/build/css/alertify.min.css'
+import '../node_modules/alertifyjs/build/css/alertify.css'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

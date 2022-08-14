@@ -11,17 +11,43 @@ export default function List() {
     const [num, setNum] = useState(1);
 
     const addTodo = (todo) => {
+
+        const compressedAddTodo = () => {
+            const newTodos = [todo, ...todos]
+            setTodos(newTodos)
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.notify('Todo id successfully added', 'custom');
+        }
         setNum(num + 1)
-        const newTodos = [todo, ...todos]
-        setTodos(newTodos)
-        alertify.set('notifier', 'position', 'top-right');
-        alertify.notify('Todo id successfully added', 'custom');
+
+        if (todo.text === '') {
+
+            const okAlertify = () => {
+                compressedAddTodo()
+            }
+
+            const cancelAlertify = () => {
+                alertify.warning('Todo is not added to your list')
+            }
+
+            alertify.confirm('ToDo checking', 'Boş bir todo əlavə etməkdən əminsiniz?', okAlertify, cancelAlertify)
+                .set({ transition: 'zoom' });
+        }
+
+        else {
+            compressedAddTodo()
+        }
     }
 
     const handleRemoveAllTodos = () => {
-        setTodos([])
-        alertify.set('notifier', 'position', 'top-center');
-        alertify.error("All Todos are removed")
+        if (todos.length === 0) {
+            alertify.alert('Xəbərdarlıq !!!', 'Siyahıda silinəcək element heç yoxdur...').set({ transition: 'flipx' }).show();
+        }
+        else {
+            setTodos([])
+            alertify.set('notifier', 'position', 'top-center');
+            alertify.error("All Todos are removed")
+        }
     }
 
     const removeCurrentTodo = (todo) => {

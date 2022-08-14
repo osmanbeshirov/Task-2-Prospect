@@ -5,7 +5,6 @@ export default function Form(props) {
 
   const [input, setInput] = useState('')
 
-
   const handleSubmit = (e) => {
     e.preventDefault()
     props.onSubmit({
@@ -13,11 +12,13 @@ export default function Form(props) {
       text: input
     })
     setInput('')
+
   }
 
   const handleChange = (e) => {
     setInput(e.target.value)
   }
+
 
   return (
     <div className='form-parent'>
@@ -30,7 +31,7 @@ export default function Form(props) {
           placeholder='Tapşırığı daxil edin'
           value={input}
           onChange={handleChange} />
-        <button type='submit' className='add-todo'><span>+</span></button>
+        <button type='submit' style={input.length > 0 ? { opacity: 1 } : { opacity: 0.5 }} className='add-todo' ><span>+</span></button>
       </form>
     </div>
   )

@@ -26,12 +26,11 @@ export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo })
             <div className='form-parent modifiaer'>
 
                 <div className='parent--modifaer' >
-                    <img src={enoughTodos} />
+                    <img src={enoughTodos} alt={bin} />
 
                     <h2>Heç bir tapşırıq yoxdur</h2>
 
                 </div>
-
 
                 {showStatus()}
 
@@ -73,7 +72,7 @@ export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo })
 
     return (
         <div>
-            {todos.length == 0 ? isNotEnoughTodos() : haveTodos()}
+            {todos.length === 0 ? isNotEnoughTodos() : haveTodos()}
         </div>
     )
 }

@@ -4,7 +4,25 @@ import '../styles/Form.css'
 import bin from '../photos/Vector.png'
 import enoughTodos from '../photos/Group.png'
 
-export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo }) {
+export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo, changeRadio }) {
+
+    // const [check, setCheck] = useState(false)
+
+    // changeRadio = (e) => {
+
+    //     setCheck(check => !check)
+
+    //     if (e.target.checked) {
+    //         // const myInput = e.target.nextElementSibling;
+    //         console.log('meni basdin...')
+
+    //     }
+
+    //     else {
+    //         console.log('meni buraxdin (')
+    //     }
+
+    // }
 
 
     const showStatus = () => {
@@ -27,9 +45,7 @@ export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo })
 
                 <div className='parent--modifaer' >
                     <img src={enoughTodos} alt={bin} />
-
                     <h2>Heç bir tapşırıq yoxdur</h2>
-
                 </div>
 
                 {showStatus()}
@@ -47,7 +63,16 @@ export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo })
                             {todos.map((todo, index) => (
                                 <li className='list-item' key={index}>
                                     <div className='list-item__inputs'>
-                                        <input className='current-todo__checkbox' type='checkbox' />
+                                        {/* <input checked={check}
+                                            className='current-todo__checkbox'
+                                            type='checkbox'
+                                            onChange={changeRadio} /> */}
+
+                                        <input
+                                            
+                                            className='current-todo__checkbox'
+                                            type='checkbox'
+                                            onChange={() => changeRadio(todo)} />
 
                                         <input readOnly type='text'
                                             name='current_todo'

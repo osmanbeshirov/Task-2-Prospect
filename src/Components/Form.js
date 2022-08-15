@@ -9,7 +9,8 @@ export default function Form(props) {
     e.preventDefault()
     props.onSubmit({
       id: props.id,
-      text: input
+      text: input,
+      completed: false
     })
     setInput('')
 

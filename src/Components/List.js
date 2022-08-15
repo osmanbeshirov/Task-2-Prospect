@@ -56,12 +56,33 @@ export default function List() {
         alertify.warning("Todo is successfully removed")
     }
 
+    // const [complete, setComplete] = useState(false)
+
+    const changeRadio = (todo) => {
+        const compledeTodos = todos.map(item => {
+            if (item.id === todo.id) {
+                return { ...item, completed: !item.completed }
+            }
+            return item;
+        })
+        setTodos(
+            [todo, compledeTodos]
+        )
+    }
+
+
+    console.log(todos)
+
+
+
     return (
         <div>
             <Form onSubmit={addTodo} id={num} />
             <Todo handleRemoveAllTodos={handleRemoveAllTodos}
                 todos={todos}
                 removeCurrentTodo={removeCurrentTodo}
+                changeRadio={changeRadio}
+
 
             />
         </div>

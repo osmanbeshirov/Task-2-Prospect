@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Form from '../Components/Form'
 import Todo from '../Components/Todo'
 
+import '../Hooks/UseLocaleStorage'
+
 import alertify from 'alertifyjs'
+import useLocalStorage from '../Hooks/UseLocaleStorage'
 
 export default function List() {
 
-    const [todos, setTodos] = useState([])
-    const [num, setNum] = useState(1);
+    const [todos, setTodos] = useLocalStorage('todos', [])
+
+    const [num, setNum] = useLocalStorage('num', 1);
 
     const addTodo = (todo) => {
 
@@ -18,6 +22,7 @@ export default function List() {
             alertify.set('notifier', 'position', 'top-right');
             alertify.notify('Todo id successfully added', 'custom');
         }
+
         setNum(num + 1)
 
         if (todo.text === '') {
@@ -66,6 +71,7 @@ export default function List() {
         })
 
         setTodos(updatesTodos)
+
     }
 
 

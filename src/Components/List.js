@@ -56,23 +56,17 @@ export default function List() {
         alertify.warning("Todo is successfully removed")
     }
 
-    // const [complete, setComplete] = useState(false)
-
     const changeRadio = (todo) => {
-        const compledeTodos = todos.map(item => {
+        let updatesTodos = todos.map((item) => {
             if (item.id === todo.id) {
-                return { ...item, completed: !item.completed }
+                item.completed = !item.completed
             }
+
             return item;
         })
-        setTodos(
-            [todo, compledeTodos]
-        )
+
+        setTodos(updatesTodos)
     }
-
-
-    console.log(todos)
-
 
 
     return (

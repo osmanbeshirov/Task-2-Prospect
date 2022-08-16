@@ -6,32 +6,15 @@ import enoughTodos from '../photos/Group.png'
 
 export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo, changeRadio }) {
 
-    // const [check, setCheck] = useState(false)
-
-    // changeRadio = (e) => {
-
-    //     setCheck(check => !check)
-
-    //     if (e.target.checked) {
-    //         // const myInput = e.target.nextElementSibling;
-    //         console.log('meni basdin...')
-
-    //     }
-
-    //     else {
-    //         console.log('meni buraxdin (')
-    //     }
-
-    // }
-
-
     const showStatus = () => {
+
+        const completedArr = todos.filter(todo => todo.completed === true)
 
         return (
             <div className='status'>
                 <div className='status__detailer'>
                     <p>Ümumi: {todos.length} tapşırıq</p>
-                    <p>Hazır: 0 tapşırıq</p>
+                    <p>Hazır: {completedArr.length} tapşırıq</p>
                 </div>
 
                 <button type='button' onClick={handleRemoveAllTodos} className='status__btn' >Hamısını sil</button>
@@ -63,13 +46,8 @@ export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo, c
                             {todos.map((todo, index) => (
                                 <li className='list-item' key={index}>
                                     <div className='list-item__inputs'>
-                                        {/* <input checked={check}
-                                            className='current-todo__checkbox'
-                                            type='checkbox'
-                                            onChange={changeRadio} /> */}
-
                                         <input
-                                            
+                                            checked={todo.completed}
                                             className='current-todo__checkbox'
                                             type='checkbox'
                                             onChange={() => changeRadio(todo)} />
@@ -77,7 +55,7 @@ export default function Todo({ todos, handleRemoveAllTodos, removeCurrentTodo, c
                                         <input readOnly type='text'
                                             name='current_todo'
                                             value={todo.text}
-                                            className='main-form__current-input'
+                                            className={todo.completed ? 'main-form__current-input input--modifaer' : 'main-form__current-input'}
                                         />
                                     </div>
 
